@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import { OneNoteContainer, OneNoteActions } from './Styles';
-import DeleteModal from './DeleteModal';
+import { OneNoteContainer, OneNoteActions } from "./Styles";
+import DeleteModal from "./DeleteModal";
 
 const OneNote = props => {
   return (
@@ -18,13 +18,15 @@ const OneNote = props => {
           noteID={props.note._id}
         />
 
-        <button type="button" onClick={props.showModal}>Delete</button>
+        <button type="button" onClick={props.showModal}>
+          Delete
+        </button>
       </OneNoteActions>
 
       <h2>{props.note.title}</h2>
       <p>{props.note.textBody}</p>
     </OneNoteContainer>
   );
-}
+};
 
 export default OneNote;

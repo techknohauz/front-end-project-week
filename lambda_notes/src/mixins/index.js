@@ -1,19 +1,22 @@
-export const customLayout = (justify = 'flex-start', align = 'flex-start') => (
-  `display: flex;
-  justify-content: ${justify};
-  align-items: ${align};`
-);
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import "./index.css";
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import rootReducer from "./reducers";
+import thunk from "redux-thunk";
+import logger from "redux-logger";
 
-export const customButton = () => (
-  `margin: 10px 0;
-  border-color: #B7B5B7;
-  padding: 20px;
-  background-color: #23B8BD;
-  font-size: 1.8rem;
-  font-weight: bold;
-  cursor: pointer;
+import App from "./App";
 
-  a {
-    color: #FFF;
-  }`
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
+  document.getElementById("root")
 );
