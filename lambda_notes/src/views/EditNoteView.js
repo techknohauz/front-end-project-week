@@ -61,10 +61,8 @@ class EditNoteView extends Component {
 
 const mapStateToProps = state => {
   return {
-    // notes: state.notes,
     note: state.note,
     gettingNote: state.gettingNote
-    // gettingNotes: state.gettingNotes
   };
 };
 

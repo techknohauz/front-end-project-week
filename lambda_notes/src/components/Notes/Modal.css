@@ -41,10 +41,6 @@
   cursor: pointer;
 }
 
-.modal-main .delete-btn {
-  background-color: #d0011b;
-}
-
 .display-block {
   display: block;
 }

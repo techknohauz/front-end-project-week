@@ -17,7 +17,7 @@ export const DELETING_NOTE = "DELETING_NOTE";
 export const EDIT_NOTE = "EDIT_NOTE";
 export const EDITING_NOTE = "EDITING_NOTE";
 
-const URL = "http://localhost:3300/api/notes";
+const URL = "https://api-lambda-notes.herokuapp.com/api/notes";
 
 export const getNotes = () => {
   return dispatch => {
@@ -26,7 +26,6 @@ export const getNotes = () => {
     axios
       .get(`${URL}`)
       .then(response => {
-        console.log("response", response);
         dispatch({ type: GET_NOTES, payload: response.data });
       })
       .catch(err => {
@@ -39,10 +38,9 @@ export const getNote = id => {
   return dispatch => {
     dispatch({ type: GETTING_NOTE });
 
-     axios
+    axios
       .get(`${URL}/${id}`)
       .then(response => {
-        console.log("RESPONSE GET NOTE", response);
         dispatch({ type: GET_NOTE, payload: response.data });
       })
       .catch(err => {
@@ -58,6 +56,7 @@ export const addNote = note => {
     axios
       .post(`${URL}/create`, note)
       .then(response => {
+        console.log("ADD NOTE ACTION RES", response);
         dispatch({ type: ADD_NOTE, payload: response.data });
       })
       .catch(err => {

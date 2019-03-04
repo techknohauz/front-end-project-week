@@ -1,6 +1,11 @@
 # Front End Project Week
 
-### Trello link [here](https://trello.com/b/srIezwgE/lambda-notes-robin-familara)
+### Trello link [here](https://trello.com/b/K3c2xsyQ/lambda-notesbackend-robin-familara).
+
+
+ ### API [here](https://api-lambda-notes.herokuapp.com/)
+
+ ### API source [here](https://github.com/techknohauz/back-end-project-week)
 
 This week you will be building a minimum viable product (MVP) for a note taking app called "Lambda Notes."
 
